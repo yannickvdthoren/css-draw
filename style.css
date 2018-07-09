@@ -1,0 +1,143 @@
+:root{
+	/* parasol color */
+	--r: rgb(255,40,40);
+	--rT: rgba(255,40,40,0);
+	--w: rgb(240,240,240);
+	--wT: rgba(240,240,240,0);
+	--o: rgb(255,180,70);
+	--oT: rgba(255,180,70,0);
+	--do: rgb(232,144,0);
+	--doT: rgba(232,144,0,0);
+
+	/*iphone color*/
+	--bk: rgb(10,10,10);
+	--bkT: rgba(10,10,10,0);
+	--dg: rgb(50,50,50);
+	--dgT: rgba(50,50,50,0);
+	--g: rgb(70,70,70);
+	--gT: rgba(70,70,70,0);
+	--lg: rgb(120,120,120);
+	--lgT: rgba(120,120,120,0);
+	--bl: rgb(20,20,120);
+	--blT: rgba(20,20,120,0);
+	--p: rgb(25,20,25);
+	--pT: rgba(25,20,25,0);
+
+	/*radar color*/
+	--gn: rgb(0,192,0);
+	--gnT: rgba(0,192,0,0);
+	--dgn: rgb(0,48,0);
+	--gy: rgb(128,128,128);
+	--gyT: rgba(128,128,128,0);
+	--bk: rgb(0,0,0);
+	--bkT: rgba(0,0,0,0);
+}
+.radar{
+	background:
+	/* lighting */
+    radial-gradient(100% 100%, var(--bkT), var(--bk) 9.9em,var(--bkT) 10em), 
+	/*lines*/
+	linear-gradient(var(--gnT) 9.8em, var(--gn) 9.8em, var(--gn) 10.2em, var(--gnT) 10.2em),
+    linear-gradient(45deg,var(--gnT) 13.94em, var(--gn) 13.98em, var(--gn) 14.3em, var(--gnT) 14.34em),
+    linear-gradient(90deg,var(--gnT) 9.8em, var(--gn) 9.8em, var(--gn) 10.2em, var(--gnT) 10.2em),
+    linear-gradient(-45deg,var(--gnT) 13.94em, var(--gn) 13.98em, var(--gn) 14.3em, var(--gnT) 14.34em),
+	/*rings*/
+	repeating-radial-gradient(var(--dgn), var(--dgn) 2.96em, var(--gn) 3em, var(--gn) 3.26em, var(--dgn) 3.3em);
+  	background-repeat: no-repeat;
+  	border-radius: 50%;
+  	font-size: 10px;
+
+  	width: 20em;
+  	height: 20em;
+  	position: relative;
+}
+.radar::before {
+  	animation: scan 5s linear infinite;
+    background:
+      /* frame */
+      radial-gradient(var(--gyT) 9.20em, var(--gy) 9.25em, var(--gy) 10em, var(--gyT) 10.05em),
+      /* hand */
+      linear-gradient(45deg, var(--gnT) 6em, var(--gn)) 0 0 / 50% 50%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+@keyframes scan {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+.iphone{
+	background:
+	/*camera*/
+	radial-gradient(1em 1em at 6.25em 2.5em, var(--bl) 0.2em, var(--g) 0.2em, var(--g) 49%, var(--gT)50%),
+	/*speaker*/
+	radial-gradient(200% 100% at 100% 50%, var(--g) 49%, var(--gT)50%) calc(50% + 0.125em - 2em - 0.25em) 2em / 0.5em 1em,
+	radial-gradient(200% 100% at 0% 50%, var(--g) 49%, var(--gT)50%) calc(50% + 0.125em + 2em + 0.25em) 2em / 0.5em 1em,
+	linear-gradient(var(--g),var(--g)) calc(50% + 0.125em) 2em / 4em 1em,
+	/*screen*/
+	linear-gradient(var(--p),var(--p)) calc(50% + 0.125em) 5em / 17.25em 30em,
+	/*Home button*/
+	radial-gradient(200% 200% at 100% 100%, var(--lgT) 0.3em, var(--lg) 0.35em, var(--lg) 0.48em, var(--lgT) 0.5em) calc(50% + 0.125em - 0.5em) 36.5em / 0.5em 0.5em,
+	radial-gradient(200% 200% at 0% 100%, var(--lgT) 0.3em, var(--lg) 0.35em, var(--lg) 0.48em, var(--lgT) 0.5em) calc(50% + 0.125em + 0.5em) 36.5em / 0.5em 0.5em,
+	radial-gradient(200% 200% at 100% 0%, var(--lgT) 0.3em, var(--lg) 0.35em, var(--lg) 0.48em, var(--lgT) 0.5em) calc(50% + 0.125em - 0.5em) 37.5em / 0.5em 0.5em,
+	radial-gradient(200% 200% at 0% 0%, var(--lgT) 0.3em, var(--lg) 0.35em, var(--lg) 0.48em, var(--lgT) 0.5em) calc(50% + 0.125em + 0.5em) 37.5em / 0.5em 0.5em,
+	/*Home body*/
+	linear-gradient(var(--lg) 0.15em, var(--dg) 0.2em, var(--dg) 1.35em, var(--lg) 1.35em) calc(50% + 0.125em) 36.5em / 0.5em 1.5em,
+	linear-gradient(90deg, var(--lg) 0.15em, var(--dg) 0.2em, var(--dg) 1.3em, var(--lg) 1.35em) calc(50% + 0.125em) 37em / 1.5em 0.5em,
+	radial-gradient(3em 3em at calc(50% + 0.125em) 37.25em, var(--bkT) 1.25em, var(--bk) 1.3em, var(--bk) 49%, var(--bkT)50%),
+	/*Lock and mute*/
+	linear-gradient(var(--lgT)5em, var(--lg) 5em, var(--lg) 7.5em, var(--lgT) 7.5em, var(--lgT) 9.5em, var(--lg) 9.5em, var(--lg) 11em, var(--lgT) 11em, var(--lgT) 13em, var(--lg) 13em, var(--lg) 14.5em, var(--lgT) 14.5em) 0 0 / 0.3em 100%,
+	/*corners*/
+	radial-gradient(200% 200% at 100% 100%, var(--dg) 1.45em, var(--lg) 1.5em, var(--lg) 50%, var(--lgT) 51%) 0.25em 0 / 2em 2em,
+	radial-gradient(200% 200% at 0% 100%, var(--dg) 1.45em, var(--lg) 1.5em, var(--lg) 50%, var(--lgT) 51%) 18em 0 / 2em 2em,
+	radial-gradient(200% 200% at 100% 0%, var(--dg) 1.45em, var(--lg) 1.5em, var(--lg) 50%, var(--lgT) 51%) 0.25em 38em / 2em 2em,
+	radial-gradient(200% 200% at 0% 0%, var(--dg) 1.45em, var(--lg) 1.5em, var(--lg) 50%, var(--lgT) 51%) 18em 38em / 2em 2em,
+	/*body*/
+	linear-gradient(var(--lg) 0.5em, var(--dg) 0.55em, var(--dg) 39.5em, var(--lg) 39.55em) 2.25em 0 / 15.75em 40em,
+	linear-gradient(90deg, var(--lg) 0.5em, var(--dg) 0.55em, var(--dg) 19.175em, var(--lg) 19.25em) 0.25em 2em / 19.75em 36em
+	;
+	background-repeat: no-repeat;
+  	font-size: 10px;
+	margin-top: 50px;
+  	width: 20em;
+  	height: 40em;
+}
+.parasol {
+	background:
+		/* parasole : top */
+		radial-gradient(100% 200% at 50% 100%, var(--r)50%, var(--rT)50.25%) 50% 1.5em / 9em 12em,
+		radial-gradient(100% 200% at 50% 100%, var(--w)50%, var(--wT)50.25%) 50% 1.5em / 21em 12em,
+		radial-gradient(100% 200% at 50% 100%, var(--r)50%, var(--rT)50.25%) 50% 1.5em / 30em 12em,
+
+		/* pointy ends */
+		radial-gradient(105% 200% at 50% 100%, var(--rT)49%, var(--r)50%) 0 13.5em / 4.5em 3em,
+		radial-gradient(105% 200% at 50% 100%, var(--wT)49%, var(--w)50%) 4.5em 13.5em / 6em 3em,
+		radial-gradient(105% 200% at 50% 100%, var(--rT)49%, var(--r)50%) 50% 13.5em / 9em 3em,
+		radial-gradient(105% 200% at 50% 100%, var(--wT)49%, var(--w)50%) 19.5em 13.5em / 6em 3em,
+		radial-gradient(105% 200% at 50% 100%, var(--rT)49%, var(--r)50%) 25.5em 13.5em / 4.5em 3em,
+
+		/* pole : top */
+		radial-gradient(200% 200% at 100% 100%, var(--do) 49%, var(--doT) 50%) 14em 0 / 1em 1em,
+		radial-gradient(200% 200% at 0% 100%, var(--o) 49%, var(--oT) 50%) 15em 0 / 1em 1em,
+		/* pole : stick */
+		linear-gradient(90deg, var(--do) 50%, var(--o) 50%) 14em 1em / 2em 25em,
+		/* pole : bottom curve */
+		radial-gradient(100% 200% at 50% 0, var(--oT) 0.95em, var(--o) 1em, var(--o) 1.95em, var(--do) 2em, var(--do) 2.95em, var(--doT) 3em) 14em 26em / 6em 3em,
+		/* pole : end stick*/
+		radial-gradient(200% 200% at 100% 100%, var(--o) 49%, var(--oT) 50%) 18em 25em / 1em 1em,
+		radial-gradient(200% 200% at 0% 100%, var(--do) 49%, var(--doT) 50%) 19em 25em / 1em 1em
+		;
+  	
+  	background-repeat: no-repeat;
+  	font-size: 10px;
+	margin-top: 50px;
+  	width: 30em;
+  	height: 29em;
+}
